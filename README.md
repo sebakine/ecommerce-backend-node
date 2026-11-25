@@ -1,3 +1,8 @@
+<picture>
+  <source media="(prefers-color-scheme: dark)" srcset=".github/banner-dark.svg">
+  <img alt="Banner del proyecto" src=".github/banner-light.svg" width="100%">
+</picture>
+
 # Entrega Final · Backend 2 · Coderhouse
 
 Servidor de ecommerce en **Node.js + Express + MongoDB** con arquitectura en capas, patrones **DAO / Repository / DTO**, autenticación con **Passport + JWT**, autorización por **roles**, **recuperación de contraseña por mail** y **lógica de compra con Tickets**.
