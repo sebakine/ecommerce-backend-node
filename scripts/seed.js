@@ -16,6 +16,9 @@ const products = [
 ];
 
 const run = async () => {
+  if (!env.ADMIN_PASSWORD || env.ADMIN_PASSWORD.length < 10) {
+    throw new Error('[seed] Define ADMIN_PASSWORD en .env (mínimo 10 caracteres) antes de crear el admin');
+  }
   await connectDB();
 
   const existingAdmin = await userRepository.getByEmail(env.ADMIN_EMAIL);

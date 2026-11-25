@@ -5,3 +5,8 @@ coverage/
 Thumbs.db
 .vscode/
 .idea/
+
+# Variables de entorno (nunca versionar secretos)
+.env
+.env.*
+!.env.example

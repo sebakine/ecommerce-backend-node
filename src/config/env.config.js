@@ -39,7 +39,7 @@ export const env = Object.freeze({
   MAIL_FROM: process.env.MAIL_FROM || 'Ecommerce Coderhouse <no-reply@ecommerce.local>',
 
   ADMIN_EMAIL: process.env.ADMIN_EMAIL || 'admin@ecommerce.com',
-  ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || 'Admin1234',
+  ADMIN_PASSWORD: process.env.ADMIN_PASSWORD || '', // sin valor por defecto: lo exige el seed
 });
 
 export const isProduction = env.NODE_ENV === 'production';

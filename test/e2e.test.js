@@ -7,6 +7,10 @@ import mongoose from 'mongoose';
 import request from 'supertest';
 
 process.env.NODE_ENV = 'test';
+// Secretos exclusivos para pruebas: el .env no se versiona.
+process.env.JWT_SECRET ??= 'test-only-jwt-secret';
+process.env.COOKIE_SECRET ??= 'test-only-cookie-secret';
+process.env.RESET_PASSWORD_SECRET ??= 'test-only-reset-secret';
 process.env.MAIL_USER = '';
 process.env.MAIL_PASS = '';
 

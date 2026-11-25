@@ -42,9 +42,15 @@ El servidor queda disponible en `http://localhost:8080`.
 
 ## Variables de entorno
 
-El archivo `.env` se incluye en el repositorio, tal como pide la consigna, **solo con valores de desarrollo local**: la base de datos apunta a `localhost`, no hay credenciales de correo y los secretos (`JWT_SECRET`, `COOKIE_SECRET`, `RESET_PASSWORD_SECRET`) son valores de ejemplo. `.env.example` sirve de plantilla.
+El archivo `.env` **no se versiona**. Para ejecutar el proyecto, copia la plantilla y completa los secretos:
 
-> **Importante:** en un entorno real, estos secretos deben reemplazarse por valores largos y aleatorios (por ejemplo, `node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"`) y el `.env` no debe subirse al repositorio.
+```bash
+cp .env.example .env
+# Genera un valor aleatorio para cada secreto (JWT_SECRET, COOKIE_SECRET, RESET_PASSWORD_SECRET)
+node -e "console.log(require('crypto').randomBytes(32).toString('hex'))"
+```
+
+`ADMIN_PASSWORD` no tiene valor por defecto: `npm run seed` exige definirla (mínimo 10 caracteres). Los tests usan secretos propios y no requieren `.env`.
 
 | Variable                    | Descripción                                                          |
 | --------------------------- | -------------------------------------------------------------------- |
